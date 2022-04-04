@@ -1,6 +1,6 @@
 #include "Reverse.h"
-#include "Truckloads"
-#include "EfficientTruckloads"
+#include "Truckloads.h"
+#include "EfficientTruckloads.h"
 #include <iostream>
 #include <string>
 #include <memory>
@@ -10,8 +10,8 @@ using namespace std;
 int main (int argc, char* argv[]){
 
     shared_ptr<Reverse> reverse = make_shared<Reverse>();
-    shared_ptr<Truckloads> truckloads = make_shared<Truckloads>();
-    shared_ptr<EfficientTruckloads> EfficientTruckloads = make_shared<EfficientTruckloads>();
+    shared_ptr<Truckloads> truckLoads = make_shared<Truckloads>();
+    shared_ptr<EfficientTruckloads> EfficientTruckLoads = make_shared<EfficientTruckloads>();
 
     if (argc != 5){
         cout << "ERROR" << endl;
@@ -36,7 +36,7 @@ int main (int argc, char* argv[]){
         if (numCrates < 0 || loadSize < 0) {
             cout << "ERROR ERROR" << endl;
         } else{
-            cout << truckLoads -> numTrucks(numCrates, loadSize) << " " << EfficientTruckloads -> numTrucks(numCrates, loadSize) << endl;
+            cout << truckLoads -> numTrucks(numCrates, loadSize) << " " << EfficientTruckLoads -> numTrucks(numCrates, loadSize) << endl;
         }
     }else{
         cout << "ERROR ERROR" << endl;
