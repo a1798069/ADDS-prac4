@@ -1,26 +1,26 @@
 #include "EfficientTruckloads.h"
 
-EfficientTruckloads::EfficientTruckloads() = default;
+EfficientTruckloads::EfficientTruckloads(){
 
-int EfficientTruckloads::numTrucks(int numCrates, int loadSize){
+};
 
-      if (this -> currentLoadSize != loadSize){
-          hold.clear();
-      }
+int EfficientTruckloads::numTrucks(int numCrates, int loadSize) {
 
-      this -> currentLoadSize = loadSize;
+    if (this -> current_loadSize != loadSize){
+        mem.clear();
+    }
 
-      if (hold.find(numCrates) != hold.end()) {
-          return hold[numCrates];
-      }
+    this -> current_loadSize = loadSize;
 
-      if (loadSize >= numCrates){
-          return 1;
-      }
+    if (mem.find(numCrates) != mem.end()) {
+        return mem[numCrates];
+    }
 
-      hold[numCrates] = numTrucks(numCrates / 2, loadSize) + numTrucks(numCrates - numCrates / 2, loadSize);
+    if (loadSize >= numCrates){
+        return 1;
+    }
 
-      return hold[numCrates];
-  }
+    mem[numCrates] = numTrucks(numCrates / 2, loadSize) + numTrucks(numCrates - numCrates / 2, loadSize);
 
+    return mem[numCrates];
 }
