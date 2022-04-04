@@ -36,7 +36,7 @@ int main (int argc, char* argv[]){
         if (numCrates < 0 || loadSize < 0) {
             cout << "ERROR ERROR" << endl;
         } else{
-            cout << truckLoads -> numTrucks(numCrates, loadSize) << " " << EfficientTruckLoads -> numTrucks(numCrates, loadSize) << endl;
+            cout << truckLoads -> numTrucks(numCrates, loadSize) << " " << EfficientTruckloads -> numTrucks(numCrates, loadSize) << endl;
         }
     }else{
         cout << "ERROR ERROR" << endl;
