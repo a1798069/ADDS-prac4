@@ -10,7 +10,7 @@ int EfficientTruckloads::numTrucks(int numCrates, int loadSize){
 
       this -> currentLoadSize = loadSize;
 
-      if (mem.find(numCrates) != hold.end()) {
+      if (hold.find(numCrates) != hold.end()) {
           return hold[numCrates];
       }
 
