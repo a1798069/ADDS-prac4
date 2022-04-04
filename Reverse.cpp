@@ -1,33 +1,35 @@
 #include "Reverse.h"
+#include<string>
+#include <iostream>
+#include "math.h"
+using namespace std;
 
-Reverse::Reverse() = default;
+Reverse::Reverse(){
 
-int Reverse::reverseDigit(int value) {
+}
 
+int Reverse::reverseDigit(int value){
     if (value < 0){
         return -1;
     }
+    int num = log10(value);
 
-    int a=1;
-
-    while(value >= a*10){
-        a* = 10;
+    if (value == 0){
+        return 0;
     }
-
-    if (a == 1){
+    if (value < 10){
         return value;
     }
 
-    return reverseDigit(value % a) * 10 + value / a;
+    return ((value%10 * pow(10, num)) + reverseDigit(value/10));
 
 }
 
-string Reverse::reverseString(string letters) {
-    if (letters.empty()){
-        return letters;
-    }
+std::string Reverse::reverseString(string letters){
+    if(letters.empty()) {
+        return "";
+    } 
+    const int final = letters.length() - 1;
+    return letters[final] + reverseString(letters.substr(0,final));
 
-    const int last = letters.length() - 1;
-
-    return letters[last] + reverseString(letters.substr(0,last));
-}
+};
